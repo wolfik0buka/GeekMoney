@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+
+hash_users = 20.times.map do 
+  {
+    email: FFaker::Internet.safe_email,
+    password: FFaker::Internet.safe_email
+  }
+end
+users = User.create! hash_users
