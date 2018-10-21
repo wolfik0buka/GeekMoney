@@ -5,24 +5,40 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "dcc": "node cli/component.js --name"
   },
   "devDependencies": {
+    "classnames": "^2.2.6",
+    "express": "^4.16.4",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-holder-component": "^1.0.5",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-native": "^4.3.0",
+    "redux": "^4.0.1"
+  },
+  "dependencies": {
     "babel-core": "^6.26.3",
-    "babel-loader": "7",
+    "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^1.0.0",
     "http-proxy-middleware": "^0.19.0",
     "node-sass": "^4.9.4",
     "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.22.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^2.0.0",
+    "fs": "0.0.1-security",
+    "html-webpack-plugin": "^3.2.0",
+    "minimist": "^1.2.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9"
-  },
-  "dependencies": {
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2"
   }
 }
