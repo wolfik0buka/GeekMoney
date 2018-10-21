@@ -1,26 +1,28 @@
 {
   "name": "frontend",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "http-proxy-middleware": "^0.19.0",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-scripts": "2.0.5"
-  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "7",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "http-proxy-middleware": "^0.19.0",
+    "node-sass": "^4.9.4",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.22.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  }
 }
