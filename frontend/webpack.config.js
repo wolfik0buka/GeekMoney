@@ -14,7 +14,7 @@ module.exports = {
         historyApiFallback: true,
         contentBase: "./dist",
         proxy: {
-            '/api': 'http://localhost:3001'
+            '/api': 'https://floating-woodland-16538.herokuapp.com/api/v1'
         }
     },
     module:{

@@ -8,8 +8,8 @@ const componentName = args.name;
 
 fs.mkdirSync(path.resolve(__dirname, '..', 'src', 'components', componentName));
 
-const componentCode = `
-import './${componentName}.scss';
+const componentCode = `import './${componentName}.scss';
+
 import React, { PureComponent } from 'react';
 
 export default class ${componentName} extends PureComponent {
@@ -23,8 +23,7 @@ export default class ${componentName} extends PureComponent {
             <div className="${componentName}"></div>
         );
     }
-}
-`;
+}`;
 
 fs.writeFileSync(
   path.resolve(__dirname, '..', 'src', 'components', componentName, `${componentName}.jsx`),
