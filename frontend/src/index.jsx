@@ -31,7 +31,7 @@ class App extends Component{
                     <header>
                         <h1>Hello GeekMoney!</h1>
                     </header>
-                    Switch
+
                 </div>
                 <footer></footer>
             </Fragment>
