@@ -15,8 +15,10 @@ module.exports = {
         contentBase: "./dist",
         proxy: {
             '/api': {
-                target: 'https://floating-woodland-16538.herokuapp.com/api/v1/signin',
-                secure: false
+                target: 'https://floating-woodland-16538.herokuapp.com/api/v1',
+                pathRewrite: {'^/api' : ''},
+                changeOrigin: true,
+                secure: false,
             }
         }
     },

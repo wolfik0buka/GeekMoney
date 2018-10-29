@@ -9,7 +9,7 @@ class Login extends PureComponent {
     }
 
     componentDidMount() {
-        //delete localStorage.userid;
+        delete localStorage.userid;
         const userid = localStorage.getItem("userid");
         if (userid != 'undefined' && userid != null) {
             console.log(`Userid: ${userid}`)
@@ -20,7 +20,7 @@ class Login extends PureComponent {
                     "password": "111111"
                 }
             };
-            fetch('https://floating-woodland-16538.herokuapp.com/api/v1/signin', {
+            fetch('/api/signin', {
                 method: 'post',
                 headers: {
                     'Accept': 'application/json, text/plain, */*',
