@@ -1,6 +1,7 @@
 import './Header.scss';
 
 import React, { PureComponent } from 'react';
+import { withRouter } from 'react-router-dom';
 
 class Header extends PureComponent {
     constructor(props) {
@@ -9,10 +10,11 @@ class Header extends PureComponent {
     }
   
     render() {
+        const { match, location, history } = this.props;
         return (
-            <h1>Hello GeekMoney!</h1>
+            <h1>Hello GeekMoney! {location.pathname}</h1>
         );
     }
 }
 
-export default Header;
+export default withRouter(Header);
