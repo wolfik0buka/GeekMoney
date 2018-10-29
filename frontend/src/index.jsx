@@ -10,14 +10,15 @@ import ReactDom from 'react-dom';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 /*Import user components*/
-/*
+
 import Navtop from 'components/Navtop';
+/*
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
 import 'react-holder-component';
-import routes from './routes';
 */
+import routes from './routes';
 
 /********************************************************************
 * Main															*
@@ -27,13 +28,17 @@ class App extends Component{
         return(
             <Fragment>
                 <div className="container">
-                    <nav></nav>
+                    <Navtop />
                     <header>
                         <h1>Hello GeekMoney!</h1>
                     </header>
-
+                    <main className="main">
+                        <Switch>
+                            {routes.map((route, idx) => <Route key={idx} {...route}/>)}
+                        </Switch>
+                    </main>
                 </div>
-                <footer></footer>
+                <footer className="footer"></footer>
             </Fragment>
         );
     }

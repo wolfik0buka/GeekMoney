@@ -12,7 +12,7 @@ const componentCode = `import './${componentName}.scss';
 
 import React, { PureComponent } from 'react';
 
-export default class ${componentName} extends PureComponent {
+class ${componentName} extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {};
@@ -20,10 +20,12 @@ export default class ${componentName} extends PureComponent {
   
     render() {
         return (
-            <div className="${componentName}"></div>
+            <div className="${componentName.toLowerCase()}">${componentName}</div>
         );
     }
-}`;
+}
+
+export default ${componentName};`;
 
 fs.writeFileSync(
   path.resolve(__dirname, '..', 'src', 'components', componentName, `${componentName}.jsx`),
@@ -32,11 +34,10 @@ fs.writeFileSync(
 
 fs.writeFileSync(
   path.resolve(__dirname, '..', 'src', 'components', componentName, 'index.js'),
-  `export default from './${componentName}';`
+  `export {default} from './${componentName}';`
 );
 
 fs.writeFileSync(
   path.resolve(__dirname, '..', 'src', 'components', componentName, `${componentName}.scss`),
-  `.${componentName} {}
-  `
+  `.${componentName.toLowerCase()} {}`
 );

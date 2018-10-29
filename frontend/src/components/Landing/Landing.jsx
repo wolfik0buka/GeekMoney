@@ -1,18 +1,18 @@
+import './Landing.scss';
 
-import './Navtop.scss';
 import React, { PureComponent } from 'react';
 
-class Navtop extends PureComponent {
+class Landing extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {};
     }
-
+  
     render() {
         return (
-            <div className="Navtop">Navtop</div>
+            <div className="landing">Landing</div>
         );
     }
 }
 
-export default Navtop;
+export default Landing;
