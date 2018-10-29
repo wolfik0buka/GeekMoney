@@ -14,7 +14,10 @@ module.exports = {
         historyApiFallback: true,
         contentBase: "./dist",
         proxy: {
-            '/api': 'https://floating-woodland-16538.herokuapp.com/api/v1'
+            '/api': {
+                target: 'https://floating-woodland-16538.herokuapp.com/api/v1/signin',
+                secure: false
+            }
         }
     },
     module:{
