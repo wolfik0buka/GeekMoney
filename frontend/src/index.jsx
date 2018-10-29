@@ -7,17 +7,15 @@ import './sass/main.scss';
 /*Incude libraries*/ 
 import  React, {Component, Fragment} from 'react';
 import ReactDom from 'react-dom';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 /*Import user components*/
 
 import Navtop from 'components/Navtop';
-/*
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+//import 'react-holder-component';
 
-import 'react-holder-component';
-*/
 import routes from './routes';
 
 /********************************************************************
@@ -29,16 +27,14 @@ class App extends Component{
             <Fragment>
                 <div className="container">
                     <Navtop />
-                    <header>
-                        <h1>Hello GeekMoney!</h1>
-                    </header>
+                    <Header />
                     <main className="main">
                         <Switch>
                             {routes.map((route, idx) => <Route key={idx} {...route}/>)}
                         </Switch>
                     </main>
                 </div>
-                <footer className="footer"></footer>
+                <Footer className="footer" />
             </Fragment>
         );
     }
