@@ -7,40 +7,53 @@ import './sass/main.scss';
 /*Incude libraries*/ 
 import  React, {Component, Fragment} from 'react';
 import ReactDom from 'react-dom';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
 
 /*Import user components*/
-/*
+
 import Navtop from 'components/Navtop';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+//import 'react-holder-component';
 
-import 'react-holder-component';
+import rootReduser from './reducers';
 import routes from './routes';
-*/
 
 /********************************************************************
 * Main															*
 *********************************************************************/
+const store = createStore(
+    rootReduser,
+    applyMiddleware(thunk),
+);
+
+
 class App extends Component{
     render(){
         return(
             <Fragment>
                 <div className="container">
-                    <nav></nav>
-                    <header>
-                        <h1>Hello GeekMoney!</h1>
-                    </header>
-
+                    <Navtop />
+                    <Header />
+                    <main className="main">
+                        <Switch>
+                            {routes.map((route, idx) => <Route key={idx} {...route}/>)}
+                        </Switch>
+                    </main>
                 </div>
-                <footer></footer>
+                <Footer className="footer" />
             </Fragment>
         );
     }
 }
 /*Запуск отрисовки*/
 ReactDom.render(
-    <BrowserRouter>
-        <App/>
-    </BrowserRouter>, 
+    <Provider store = {store}>
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
+    </Provider>,
     document.getElementById('web-page'));

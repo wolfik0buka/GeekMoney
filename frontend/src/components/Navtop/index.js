@@ -1,1 +1,1 @@
-export default from './Navtop';
+export {default} from './Navtop';

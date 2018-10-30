@@ -1,8 +1,9 @@
 
 import './Navtop.scss';
 import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom';
 
-export default class Navtop extends PureComponent {
+class Navtop extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {};
@@ -10,7 +11,19 @@ export default class Navtop extends PureComponent {
 
     render() {
         return (
-            <div className="Navtop">ываыв</div>
+            <nav className="navtop">
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/login">Login</Link></li>
+                    <li><Link to="/score">Score</Link></li>
+                    <li><Link to="/income">Income</Link></li>
+                    <li><Link to="/expenses">Expenses</Link></li>
+                    <li><Link to="/transfer">Transfer</Link></li>
+                </ul>
+            </nav>
+
         );
     }
 }
+
+export default Navtop;

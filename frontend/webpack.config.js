@@ -14,7 +14,12 @@ module.exports = {
         historyApiFallback: true,
         contentBase: "./dist",
         proxy: {
-            '/api': 'https://floating-woodland-16538.herokuapp.com/api/v1'
+            '/api': {
+                target: 'https://floating-woodland-16538.herokuapp.com/api/v1',
+                pathRewrite: {'^/api' : ''},
+                changeOrigin: true,
+                secure: false,
+            }
         }
     },
     module:{
@@ -42,6 +47,7 @@ module.exports = {
         alias:{
             components: path.resolve(__dirname, 'src', 'Components'),
             containers: path.resolve(__dirname, 'src', 'Containers'),
+            actions: path.resolve(__dirname, 'src', 'actions'),
         }
     },
     plugins :[
