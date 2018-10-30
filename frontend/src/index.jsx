@@ -8,6 +8,9 @@ import './sass/main.scss';
 import  React, {Component, Fragment} from 'react';
 import ReactDom from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
 
 /*Import user components*/
 
@@ -16,11 +19,18 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 //import 'react-holder-component';
 
+import rootReduser from './reducers';
 import routes from './routes';
 
 /********************************************************************
 * Main															*
 *********************************************************************/
+const store = createStore(
+    rootReduser,
+    applyMiddleware(thunk),
+);
+
+
 class App extends Component{
     render(){
         return(
@@ -41,7 +51,9 @@ class App extends Component{
 }
 /*Запуск отрисовки*/
 ReactDom.render(
-    <BrowserRouter>
-        <App/>
-    </BrowserRouter>, 
+    <Provider store = {store}>
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
+    </Provider>,
     document.getElementById('web-page'));
